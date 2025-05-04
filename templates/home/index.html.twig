@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Bienvenue sur Event Reservation</h1>
+
+{% if app.user %}
+    <div class="alert alert-success">
+        Connecté en tant que {{ app.user.email }} (ID: {{ app.user.id }})
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        <a href="{{ path('app_register') }}">Inscrivez-vous</a> ou 
+        <a href="{{ path('app_login') }}">connectez-vous</a>
+    </div>
+{% endif %}
+
+<h3>Structure créée :</h3>
+<ul>
+    <li>Système d'authentification complet</li>
+    <li>Entités User, Evenement, Reservation</li>
+    <li>Base de données configurée</li>
+</ul>
+{% endblock %}

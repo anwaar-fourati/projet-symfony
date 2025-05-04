@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Event Reservation{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ path('app_home') }}">Accueil</a>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">Connexion</a>
+                <a href="{{ path('app_register') }}">Inscription</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    {% block body %}{% endblock %}
+
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
