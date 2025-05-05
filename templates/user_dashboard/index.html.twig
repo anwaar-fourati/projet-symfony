@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Tableau de Bord{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        /* Vos styles CSS personnalisés ici */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .welcome-message {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        /* Ajoutez d'autres styles selon vos besoins */
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="dashboard-container">
+    <h1 class="welcome-message">Bienvenue, {{ user.nom }} !</h1>
+    
+    <div class="dashboard-content">
+        {# Contenu de votre dashboard #}
+        <p>Ceci est votre espace personnel.</p>
+        
+        {# Exemple : Afficher les événements à venir #}
+        <div class="upcoming-events">
+            <h2>Vos prochains événements</h2>
+            {# Ici vous pourrez ajouter la logique pour afficher les événements #}
+        </div>
+    </div>
+</div>
+{% endblock %}
